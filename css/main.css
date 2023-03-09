@@ -290,3 +290,31 @@ a{
     background-blend-mode: multiply;
     content: "";
 }
+
+.Winner-link {
+    display: inline-block;
+    margin: auto;
+    margin-top: 320px;
+    margin-left: 640px;
+    padding:  20px;
+    border: 2px solid #fff;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 40px; 
+    color: #fff;
+}
+
+.over-link {
+    display: inline-block;
+    margin: auto;
+    margin-top: 40px;
+    margin-left: 670px;
+    padding:  20px;
+    border: 2px solid #fff;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 40px; 
+    color: #fff;
+}
