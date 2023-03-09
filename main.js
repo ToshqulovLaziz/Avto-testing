@@ -1,11 +1,11 @@
 const question = document.querySelector(".js-avto-question");
 const countQuestion = document.querySelector(".js-avto-desc");
 const choices = Array.from(document.querySelectorAll(".js-avto-text"));
-const elAvtoImg = document.querySelector(".js-avto-img");
 const elWinSect = document.querySelector(".js--section");
 const elSavolSoni = document.querySelector(".js-savol-soni");
 const elXatoSoni = document.querySelector(".js-xato-soni");
 const elWinCount = document.querySelector(".js-win-count");
+const imageContainer = document.querySelector(".box-2");
 
 let currentQuestion = {}; //Joriy savol
 let acceptingAnswers = false; //Javoblarni qabul qilish
@@ -24,12 +24,14 @@ fetch(
                 return res.json();
         })
         .then((loadedQuestions) => {
+                
                 questions = loadedQuestions.roadSymbol.map((loadedQuestion) => {
                         
                         const formattedQuestion = {
                                 question: loadedQuestion.symbol_img,
                         };
                         
+                       
                         const answerChoices = [...loadedQuestion.incorrect_answers];
                         formattedQuestion.answer = Math.floor(Math.random() * 4) + 1;
                         answerChoices.splice(
@@ -40,7 +42,6 @@ fetch(
                                 
                                 answerChoices.forEach((choice, index) => {
                                         formattedQuestion['choice' + (index + 1)] = choice;
-                                        elAvtoImg.src = loadedQuestion.symbol_img
                                 });
                                 
                                 return formattedQuestion;
@@ -75,7 +76,7 @@ fetch(
                         
                         const questionIndex = Math.floor(Math.random() * availableQuesions.length);
                         currentQuestion = availableQuesions[questionIndex];
-                        question.innerText = currentQuestion.question;
+                        question.src = currentQuestion.question;
                         
                         choices.forEach((choice) => {
                                 const number = choice.dataset['number'];
@@ -107,7 +108,7 @@ fetch(
                                         inCorrectSound();
                                         xato++;
                                 }
-
+                                
                                 if(xato === 5){ 
                                         return  window.location.assign('./game-over.html'); 
                                 }
@@ -143,7 +144,7 @@ fetch(
                 } else if (document.title === "Medium") {
                         startTime = 5; 
                 } else if (document.title === "Hard"){
-                        startTime = 3;
+                        startTime = 1;
                 }
                 let timeLeft = startTime * 60; // Convert minutes to seconds
                 

@@ -207,7 +207,7 @@ a{
 
   .avto-question__title {
     margin-top: 20px;
-    margin-left: 190px;
+    margin-left: 240px;
     font-weight: 700;
     font-size: 32px; 
     color: #fff;
@@ -215,7 +215,7 @@ a{
 
   .avto-img {
     display: block;
-    margin-left: 240px;
+    margin-left: 260px;
     width: 220px;
     height: 220px;
     border-radius: 12px;
