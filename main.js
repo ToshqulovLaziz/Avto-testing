@@ -144,7 +144,7 @@ fetch(
                 } else if (document.title === "Medium") {
                         startTime = 5; 
                 } else if (document.title === "Hard"){
-                        startTime = 1;
+                        startTime = 3;
                 }
                 let timeLeft = startTime * 60; // Convert minutes to seconds
                 
